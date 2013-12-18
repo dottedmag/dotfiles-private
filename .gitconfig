@@ -1,0 +1,7 @@
+[user]
+	name = Mikhail Gusarov
+	email = dottedmag@dottedmag.net
+[color]
+	ui = auto
+[alias]
+	ci = commit
