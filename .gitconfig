@@ -9,3 +9,5 @@
 	default = simple
 [gpg]
 	program = gpg2
+[gcrypt]
+	publish-participants = true
