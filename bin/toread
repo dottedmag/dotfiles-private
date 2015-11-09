@@ -1,0 +1,28 @@
+#!/bin/sh
+
+cd ~/books
+
+lb()
+{
+  find reread tostudy toread-* -type f -a \! -name '.DS_Store' "$@"
+}
+
+lbl()
+{
+  lb -print0 | xargs -0 ls -lS
+}
+
+if [ "$1" = "long" ]; then
+    lbl
+elif [ "$1" = "count" ]; then
+    lb | wc -l
+elif [ "$1" = "preview" ]; then
+    lbl | egrep '\.(pdf|djvu)$'
+elif [ "$1" = "kindle" ]; then
+    lbl | egrep '\.(fb2\.zip|fb2|epub|mobi)$'
+elif [ "$#" = 1 ]; then
+  printf "Unknown command: $1\nUse long|count|preview|kindle\n" >&2
+  exit 1
+else
+  lb | sort
+fi
