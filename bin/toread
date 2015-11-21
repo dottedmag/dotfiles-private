@@ -4,7 +4,7 @@ cd ~/books
 
 lb()
 {
-  find reread tostudy toread-* -type f -a \! -name '.DS_Store' "$@"
+  find toread-* -type f -a \! -name '.DS_Store' "$@"
 }
 
 lbl()
